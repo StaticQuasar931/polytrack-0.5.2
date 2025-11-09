@@ -41795,13 +41795,7 @@ gN = function(e) {
             n.href = "https://opengameart.org/content/sci-fi-theme-1",
             n.target = "_blank",
             n.textContent = 'OpenGameArt.org "Sci-fi Theme" by Maou (CC-BY 4.0)',
-            kN(this, JD, "f").appendChild(n),
-            kN(this, JD, "f").appendChild(document.createElement("br"));
-            const i = document.createElement("a");
-            i.href = "https://www.kodub.com/privacy/polytrack",
-            i.target = "_blank",
-            i.textContent = "Privacy Policy",
-            kN(this, JD, "f").appendChild(i)
+            kN(this, JD, "f").appendChild(n)
         }
         ,
         vN = function() {
