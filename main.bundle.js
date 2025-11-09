@@ -37707,7 +37707,7 @@
             switch (mu) {
             case "kodub":
             case "jest":
-                e = [/\.kodub\.com$/];
+                e = [/\.kodub\.com$/, /^htmlunblockedgames\.github\.io$/];
                 break;
             case "electron":
             case "capacitor":
