@@ -41785,12 +41785,11 @@
             }
         }
         ,
-        gN = function(e) {
+gN = function(e) {
             kN(this, JD, "f").innerHTML = "";
             const t = document.createElement("a");
-            t.href = "https://www.kodub.com",
-            t.target = "_blank",
-            t.textContent = "kodub.com - " + e.get("Version") + " " + bu,
+            t.href = "https://www.sites.google.com/view/poly-track",
+            t.textContent = "sites.google.com/view/poly-track",
             kN(this, JD, "f").appendChild(t);
             const n = document.createElement("a");
             n.href = "https://opengameart.org/content/sci-fi-theme-1",
