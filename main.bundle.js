@@ -37825,7 +37825,7 @@
                 kC(this, eC, s, "f"),
                 kC(this, tC, c, "f"),
                 kC(this, nC, h, "f"),
-                kC(this, pC, null, "f"),
+                kC(this, pC, o.isOfficialTrack(t) || o.isCommunityTrack(t) ? !0 : null, "f"),
                 kC(this, iC, e, "f"),
                 kC(this, rC, document.createElement("div"), "f"),
                 EC(this, rC, "f").className = "leaderboard",
