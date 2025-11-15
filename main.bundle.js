@@ -37702,53 +37702,7 @@
             return n = t + n,
             n
         }
-        function jT() {
-            /* legacy host: htmlunblockedgames\.github\.io */
-            const e = location.hostname ? location.hostname.toLowerCase() : ""
-              , t = location.pathname ? location.pathname.toLowerCase() : "";
-            let n = null;
-            try {
-                document.referrer && (n = new URL(document.referrer.toLowerCase()))
-            } catch (e) {
-                n = null
-            }
-            const i = n ? n.hostname : ""
-              , r = n ? n.pathname : ""
-              , a = (e,t)=>{
-                if (!e)
-                    return !1;
-                if ("htmlunblockedgames.github.io" === e)
-                    return !0;
-                if ("sites.google.com" !== e)
-                    return !1;
-                if (!t)
-                    return !0;
-                return t.startsWith("/view/poly-track")
-            }
-              , s = ()=>a(e, t) || a(i, r);
-            switch (mu) {
-            case "kodub":
-            case "jest":
-                return !s();
-            case "electron":
-            case "capacitor":
-                return !1;
-            case "itch":
-                return !(/itch\.io$/.test(e) || /itch\.zone$/.test(e));
-            case "armorgames":
-                return !/^19464\.cache\.armorgames\.com$/.test(e);
-            case "gato":
-                return !/^gato-files-prod\.s3\.amazonaws\.com$/.test(e);
-            case "crazygames":
-                return !/\.crazygames\.com$/.test(e);
-            case "poki":
-                return !(/\.poki\.com$/.test(e) || /\.poki-gdn\.com$/.test(e));
-            case "y8":
-                return !/\.y8\.com$/.test(e);
-            default:
-                return !0
-            }
-        }
+        function jT(){return !1 /* htmlunblockedgames\.github\.io */}
         function QT() {
             let e;
             switch (mu) {
