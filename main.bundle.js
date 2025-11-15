@@ -37714,12 +37714,19 @@
             }
             const i = n ? n.hostname : ""
               , r = n ? n.pathname : ""
-              , a = (e,t)=>"sites.google.com" === e && t.startsWith("/view/poly-track")
-              , s = (e,t)=>a(e, t) || a(i, r);
+              , a = (e,t)=>{
+                if (!e || "sites.google.com" !== e)
+                    return !1;
+                if (!t)
+                    return !0;
+                const n = t.startsWith("/view/poly-track");
+                return n
+            }
+              , s = ()=>a(e, t) || a(i, r);
             switch (mu) {
             case "kodub":
             case "jest":
-                return !s(e, t);
+                return !s();
             case "electron":
             case "capacitor":
                 return !1;
