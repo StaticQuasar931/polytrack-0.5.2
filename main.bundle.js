@@ -44725,23 +44725,29 @@ gN = function(e) {
                             d.open("POST", s, !0),
                             d.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"),
                             d.send(u)
-                            }
-                              ,
-                            this.getLeaderboard("", i, 0, 10, null).then((e => {
-                                if (e && Array.isArray(e.entries) && e.entries.length >= 10) {
-                                    const t = e.entries[Math.min(9, e.entries.length - 1)];
-                                    if (t && "number" == typeof t.frames && a.numberOfFrames >= t.frames)
-                                        return void o({
-                                            uploadId: null,
-                                            positionChange: null
-                                        })
+                            };
+                            const f = () => {
+                                this.getLeaderboard("", i, 0, 10, null).then((e => {
+                                    if (e && Array.isArray(e.entries) && e.entries.length >= 10) {
+                                        const t = e.entries[Math.min(9, e.entries.length - 1)];
+                                        if (t && "number" == typeof t.frames && a.numberOfFrames >= t.frames)
+                                            return void o({
+                                                uploadId: null,
+                                                positionChange: null
+                                            })
+                                    }
+                                    u()
                                 }
+                                )).catch(( () => {
+                                    u()
+                                }
+                                ))
+                            };
+                            try {
+                                f()
+                            } catch (e) {
                                 u()
                             }
-                            )).catch(( () => {
-                                u()
-                            }
-                            ))
                         }
                     }
                 }
