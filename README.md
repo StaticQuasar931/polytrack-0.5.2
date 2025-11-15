@@ -67,3 +67,5 @@ Out of the box, the bundle treats these origins as “official”:
 - `sites.google.com/view/poly-track`
 
 Hosting elsewhere will surface the red “unofficial build” banner and may restrict features unless you patch the allow‑list in `main.bundle.js`.
+
+Backend deployment docs now live alongside the Worker source in `../polytrack-backend/README.md`.
