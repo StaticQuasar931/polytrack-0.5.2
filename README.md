@@ -52,14 +52,6 @@ Run it before every deploy to catch regressions without reopening the bundle.
 
 ---
 
-## Backend / API Reference
-
-All client ↔ server interactions (leaderboards, profiles, recordings, verifier workflows) are reverse-engineered and documented in `API.md`. Use that file if you plan to swap the Kodub backend for your own service—every endpoint, request payload, and validation rule is enumerated with references back to `main.bundle.js`.
-
-This repo currently targets the **testing** backend Worker at `https://polytrack-backend-testing.htmlunblockedgames.workers.dev/`. Update `main.bundle.js` (search for `vu =`) if you change environments.
-
----
-
 ## Host Allow-List
 
 Out of the box, the bundle treats these origins as “official”:
