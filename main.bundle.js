@@ -41804,13 +41804,12 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
                 document.head.appendChild(style);
             }
 
-            top.classList.add("staticFunHover");
-            top.classList.add("staticFunPill");
 
-            const textSpan = document.createElement("span");
-            textSpan.className = "staticFunLink";
-            textSpan.textContent = "More Unblocked Games by Static";
-            top.appendChild(textSpan);
+            top.classList.add("staticFunHover");
+
+            top.classList.add("staticFunPill");
+            top.classList.add("staticFunLink");
+            top.textContent = "More Unblocked Games by Static";
 
             const version = document.createElement("div");
             version.textContent = "PolyTrack v0.5.2";
