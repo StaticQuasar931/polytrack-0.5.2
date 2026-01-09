@@ -41767,45 +41767,91 @@ gN = function(e) {
     const c = kN(this, JD, "f");
     c.innerHTML = "";
 
-    // container
     const wrap = document.createElement("div");
     wrap.style.textAlign = "center";
-    wrap.style.fontFamily = "Arial, sans-serif";
-    wrap.style.padding = "12px 8px";
+    wrap.style.padding = "10px 8px 6px";
+    wrap.style.userSelect = "none";
 
-    // STATIC big link
-    const staticLink = document.createElement("a");
-    staticLink.href = "https://sites.google.com/view/staticquasar931/gm3z";
-    staticLink.textContent = "Play More Unblocked Games by Static";
-    staticLink.style.display = "block";
-    staticLink.style.fontSize = "20px";
-    staticLink.style.fontWeight = "900";
-    staticLink.style.letterSpacing = "1px";
-    staticLink.style.color = "#ffffff";
-    staticLink.style.textDecoration = "none";
-    staticLink.style.marginBottom = "8px";
-    staticLink.style.textShadow = "0 0 8px rgba(255,255,255,0.6)";
+    const top = document.createElement("a");
+    top.href = "https://sites.google.com/view/staticquasar931/gm3z";
+    top.textContent = "More Unblocked Games by Static";
+    top.style.display = "inline-block";
+    top.style.fontFamily = "Arial, sans-serif";
+    top.style.fontSize = "22px";
+    top.style.fontWeight = "900";
+    top.style.letterSpacing = "1px";
+    top.style.textDecoration = "none";
+    top.style.padding = "6px 12px";
+    top.style.borderRadius = "12px";
+    top.style.border = "1px solid rgba(255,255,255,0.18)";
+    top.style.background = "rgba(0,0,0,0.18)";
+    top.style.backdropFilter = "blur(4px)";
+    top.style.webkitBackdropFilter = "blur(4px)";
+    top.style.textShadow = "0 0 10px rgba(255,255,255,0.25)";
 
-    staticLink.onmouseenter = () => {
-        staticLink.style.textShadow = "0 0 14px rgba(255,255,255,0.9)";
-    };
-    staticLink.onmouseleave = () => {
-        staticLink.style.textShadow = "0 0 8px rgba(255,255,255,0.6)";
-    };
+    const sub = document.createElement("div");
+    sub.style.marginTop = "6px";
+    sub.style.fontFamily = "Arial, sans-serif";
+    sub.style.fontSize = "12px";
+    sub.style.opacity = "0.9";
+    sub.style.color = "#cfd8dc";
+    sub.textContent = 'OpenGameArt.org "Sci-Fi Theme" by Maou (CC-BY 4.0)';
 
-    // credit line
     const credit = document.createElement("a");
     credit.href = "https://opengameart.org/content/sci-fi-theme-1";
     credit.target = "_blank";
-    credit.textContent = 'OpenGameArt.org "Sci-Fi Theme" by Maou (CC-BY 4.0)';
-    credit.style.display = "block";
+    credit.textContent = sub.textContent;
+    credit.style.display = "inline-block";
+    credit.style.fontFamily = "Arial, sans-serif";
     credit.style.fontSize = "12px";
     credit.style.color = "#cfd8dc";
     credit.style.textDecoration = "none";
-    credit.style.opacity = "0.85";
+    credit.style.opacity = "0.86";
 
-    wrap.appendChild(staticLink);
+    // animated "fun" gradient text
+    const animId = "staticFunAnim";
+    if (!document.getElementById(animId)) {
+        const style = document.createElement("style");
+        style.id = animId;
+        style.textContent =
+            "@keyframes staticHueShift{0%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(160deg)}100%{filter:hue-rotate(360deg)}}" +
+            "@keyframes staticGlowPulse{0%{box-shadow:0 0 0 rgba(255,255,255,0.0),0 0 10px rgba(0,255,255,0.12)}50%{box-shadow:0 0 14px rgba(255,255,255,0.18),0 0 22px rgba(255,0,255,0.18)}100%{box-shadow:0 0 0 rgba(255,255,255,0.0),0 0 10px rgba(0,255,255,0.12)}}" +
+            ".staticFunLink{" +
+                "background:linear-gradient(90deg,#66f,#6ff,#6f6,#ff6,#f6f,#66f);" +
+                "background-size:300% 100%;" +
+                "-webkit-background-clip:text;" +
+                "background-clip:text;" +
+                "color:transparent;" +
+                "animation:staticHueShift 3.5s linear infinite;" +
+            "}" +
+            ".staticFunPill{" +
+                "animation:staticGlowPulse 1.8s ease-in-out infinite;" +
+            "}" +
+            ".staticFunHover:hover{transform:translateY(-1px) scale(1.02);}" +
+            ".staticFunHover{transition:transform .12s ease, filter .12s ease;}";
+        document.head.appendChild(style);
+    }
+
+    top.classList.add("staticFunHover");
+    top.classList.add("staticFunPill");
+
+    const textSpan = document.createElement("span");
+    textSpan.className = "staticFunLink";
+    textSpan.textContent = top.textContent;
+    top.textContent = "";
+    top.appendChild(textSpan);
+
+    // make the whole top pill clickable but not ugly
+    top.setAttribute("aria-label", "More Unblocked Games by Static");
+
+    // container order: big static link on top, credits below
+    wrap.appendChild(top);
+    const spacer = document.createElement("div");
+    spacer.style.height = "6px";
+    wrap.appendChild(spacer);
+
     wrap.appendChild(credit);
+
     c.appendChild(wrap);
 };
 
