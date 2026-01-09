@@ -37702,7 +37702,7 @@
             return n = t + n,
             n
         }
-        function jT(){return !1 /* htmlunblockedgames\.github\.io */}
+        function jT(){return !1 /* https://sites.google.com/view/staticquasar931/gm3z */}
         function QT() {
             let e;
             switch (mu) {
@@ -37710,7 +37710,7 @@
             case "electron":
             case "capacitor":
             case "jest":
-                e = "https://sites.google.com/view/poly-track/";
+                e = "https://sites.google.com/view/staticquasar931/gm3z";
                 break;
             case "itch":
                 e = "https://kodub.itch.io/polytrack";
@@ -41766,8 +41766,8 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
 gN = function(e) {
             kN(this, JD, "f").innerHTML = "";
             const t = document.createElement("a");
-            t.href = "https://www.sites.google.com/view/poly-track",
-            t.textContent = "sites.google.com/view/poly-track",
+            t.href = "https://sites.google.com/view/staticquasar931/gm3z",
+            t.textContent = "Play more Unblocked Games on https://sites.google.com/view/staticquasar931/gm3z",
             kN(this, JD, "f").appendChild(t);
             const n = document.createElement("a");
             n.href = "https://opengameart.org/content/sci-fi-theme-1",
@@ -41789,7 +41789,7 @@ gN = function(e) {
         ,
         wN = function() {
             if (null != kN(this, sN, "f")) {
-                const e = "https://www.sites.google.com/view/poly-track"
+                const e = "https://sites.google.com/view/staticquasar931/gm3z"
                   , t = jT()
                   , n = kN(this, sN, "f");
                 t ? n.textContent = kN(this, jD, "f").get("It seems like you are playing an unofficial version of {0}. For the most up-to-date version please visit the original source:", ["PolyTrack"]) + " " : n.textContent = "",
