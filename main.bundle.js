@@ -41763,19 +41763,29 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             }
         }
         ,
-        gN = function(e) {
+                gN = function(e) {
             const c = kN(this, JD, "f");
             c.innerHTML = "";
+
+            // Make sure the info box can receive clicks and selection
+            c.style.pointerEvents = "auto";
+            c.style.userSelect = "text";
 
             const wrap = document.createElement("div");
             wrap.style.textAlign = "center";
             wrap.style.padding = "10px 8px 6px";
-            wrap.style.userSelect = "none";
+            wrap.style.pointerEvents = "auto";
+            wrap.style.userSelect = "text";
 
             const top = document.createElement("a");
             top.href = "https://sites.google.com/view/staticquasar931/gm3z";
+            top.target = "_blank";
+            top.rel = "noopener noreferrer";
+            top.textContent = "More Unblocked Games by Static";
             top.style.display = "inline-block";
             top.style.cursor = "pointer";
+            top.style.pointerEvents = "auto";
+            top.style.userSelect = "text";
             top.style.fontFamily = "Arial, sans-serif";
             top.style.fontSize = "22px";
             top.style.fontWeight = "900";
@@ -41785,10 +41795,16 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             top.style.borderRadius = "12px";
             top.style.border = "1px solid rgba(255,255,255,0.18)";
             top.style.background = "rgba(0,0,0,0.18)";
-            top.style.backdropFilter = "blur(4px)";
-            top.style.webkitBackdropFilter = "blur(4px)";
             top.style.textShadow = "0 0 10px rgba(255,255,255,0.25)";
             top.setAttribute("aria-label", "More Unblocked Games by Static");
+
+            // Force link to open even if the game UI tries to swallow the click
+            top.addEventListener("click", function(ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                if (ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+                window.open("https://sites.google.com/view/staticquasar931/gm3z", "_blank", "noopener");
+            }, true);
 
             const animId = "staticFunAnim";
             if (!document.getElementById(animId)) {
@@ -41804,12 +41820,9 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
                 document.head.appendChild(style);
             }
 
-
             top.classList.add("staticFunHover");
-
             top.classList.add("staticFunPill");
             top.classList.add("staticFunLink");
-            top.textContent = "More Unblocked Games by Static";
 
             const version = document.createElement("div");
             version.textContent = "PolyTrack v0.5.2";
@@ -41818,10 +41831,13 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             version.style.fontSize = "11px";
             version.style.opacity = "0.75";
             version.style.color = "#b0bec5";
+            version.style.pointerEvents = "auto";
+            version.style.userSelect = "text";
 
             const credit = document.createElement("a");
             credit.href = "https://opengameart.org/content/sci-fi-theme-1";
             credit.target = "_blank";
+            credit.rel = "noopener noreferrer";
             credit.textContent = 'OpenGameArt.org "Sci-Fi Theme" by Maou (CC-BY 4.0)';
             credit.style.display = "inline-block";
             credit.style.fontFamily = "Arial, sans-serif";
@@ -41829,6 +41845,8 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             credit.style.color = "#cfd8dc";
             credit.style.textDecoration = "none";
             credit.style.opacity = "0.86";
+            credit.style.pointerEvents = "auto";
+            credit.style.userSelect = "text";
 
             wrap.appendChild(top);
             wrap.appendChild(version);
@@ -41841,6 +41859,7 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             c.appendChild(wrap);
         }
         ,
+
         vN = function() {
             var e;
             null === (e = kN(this, sN, "f")) || void 0 === e || e.classList.add("hidden"),
