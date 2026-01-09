@@ -41764,17 +41764,51 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
         }
         ,
 gN = function(e) {
-            kN(this, JD, "f").innerHTML = "";
-            const t = document.createElement("a");
-            t.href = "https://sites.google.com/view/staticquasar931/gm3z",
-            t.textContent = "Play more Unblocked Games on https://sites.google.com/view/staticquasar931/gm3z",
-            kN(this, JD, "f").appendChild(t);
-            const n = document.createElement("a");
-            n.href = "https://opengameart.org/content/sci-fi-theme-1",
-            n.target = "_blank",
-            n.textContent = 'OpenGameArt.org "Sci-fi Theme" by Maou (CC-BY 4.0)',
-            kN(this, JD, "f").appendChild(n)
-        }
+    const c = kN(this, JD, "f");
+    c.innerHTML = "";
+
+    // container
+    const wrap = document.createElement("div");
+    wrap.style.textAlign = "center";
+    wrap.style.fontFamily = "Arial, sans-serif";
+    wrap.style.padding = "12px 8px";
+
+    // STATIC big link
+    const staticLink = document.createElement("a");
+    staticLink.href = "https://sites.google.com/view/staticquasar931/gm3z";
+    staticLink.textContent = "Play More Unblocked Games by Static";
+    staticLink.style.display = "block";
+    staticLink.style.fontSize = "20px";
+    staticLink.style.fontWeight = "900";
+    staticLink.style.letterSpacing = "1px";
+    staticLink.style.color = "#ffffff";
+    staticLink.style.textDecoration = "none";
+    staticLink.style.marginBottom = "8px";
+    staticLink.style.textShadow = "0 0 8px rgba(255,255,255,0.6)";
+
+    staticLink.onmouseenter = () => {
+        staticLink.style.textShadow = "0 0 14px rgba(255,255,255,0.9)";
+    };
+    staticLink.onmouseleave = () => {
+        staticLink.style.textShadow = "0 0 8px rgba(255,255,255,0.6)";
+    };
+
+    // credit line
+    const credit = document.createElement("a");
+    credit.href = "https://opengameart.org/content/sci-fi-theme-1";
+    credit.target = "_blank";
+    credit.textContent = 'OpenGameArt.org "Sci-Fi Theme" by Maou (CC-BY 4.0)';
+    credit.style.display = "block";
+    credit.style.fontSize = "12px";
+    credit.style.color = "#cfd8dc";
+    credit.style.textDecoration = "none";
+    credit.style.opacity = "0.85";
+
+    wrap.appendChild(staticLink);
+    wrap.appendChild(credit);
+    c.appendChild(wrap);
+};
+
         ,
         vN = function() {
             var e;
