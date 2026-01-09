@@ -41775,6 +41775,7 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             const top = document.createElement("a");
             top.href = "https://sites.google.com/view/staticquasar931/gm3z";
             top.style.display = "inline-block";
+            top.style.cursor = "pointer";
             top.style.fontFamily = "Arial, sans-serif";
             top.style.fontSize = "22px";
             top.style.fontWeight = "900";
@@ -41798,8 +41799,8 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
                     "@keyframes staticGlowPulse{0%{box-shadow:0 0 0 rgba(255,255,255,0.0),0 0 10px rgba(0,255,255,0.12)}50%{box-shadow:0 0 14px rgba(255,255,255,0.18),0 0 22px rgba(255,0,255,0.18)}100%{box-shadow:0 0 0 rgba(255,255,255,0.0),0 0 10px rgba(0,255,255,0.12)}}" +
                     ".staticFunLink{background:linear-gradient(90deg,#66f,#6ff,#6f6,#ff6,#f6f,#66f);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:staticHueShift 3.5s linear infinite;}" +
                     ".staticFunPill{animation:staticGlowPulse 1.8s ease-in-out infinite;}" +
-                    ".staticFunHover:hover{transform:translateY(-1px) scale(1.02);}" +
-                    ".staticFunHover{transition:transform .12s ease, filter .12s ease;}";
+                    ".staticFunHover:hover{transform:translateY(-2px) scale(1.04);filter:brightness(1.15);}" +
+                    ".staticFunHover{transition:transform .14s ease, filter .14s ease;}";
                 document.head.appendChild(style);
             }
 
@@ -41810,6 +41811,14 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             textSpan.className = "staticFunLink";
             textSpan.textContent = "More Unblocked Games by Static";
             top.appendChild(textSpan);
+
+            const version = document.createElement("div");
+            version.textContent = "PolyTrack v0.5.2";
+            version.style.marginTop = "4px";
+            version.style.fontFamily = "Arial, sans-serif";
+            version.style.fontSize = "11px";
+            version.style.opacity = "0.75";
+            version.style.color = "#b0bec5";
 
             const credit = document.createElement("a");
             credit.href = "https://opengameart.org/content/sci-fi-theme-1";
@@ -41823,6 +41832,7 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             credit.style.opacity = "0.86";
 
             wrap.appendChild(top);
+            wrap.appendChild(version);
 
             const spacer = document.createElement("div");
             spacer.style.height = "6px";
@@ -41843,6 +41853,7 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             kN(this, JD, "f").className = "hidden"
         }
         ,
+
 
         wN = function() {
             if (null != kN(this, sN, "f")) {
