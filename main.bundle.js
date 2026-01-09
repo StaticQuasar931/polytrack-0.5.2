@@ -41763,7 +41763,7 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             }
         }
         ,
-                gN = function(e) {
+        gN = function(e) {
             const c = kN(this, JD, "f");
             c.innerHTML = "";
 
@@ -41781,7 +41781,6 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             top.href = "https://sites.google.com/view/staticquasar931/gm3z";
             top.target = "_blank";
             top.rel = "noopener noreferrer";
-            top.textContent = "More Unblocked Games by Static";
             top.style.display = "inline-block";
             top.style.cursor = "pointer";
             top.style.pointerEvents = "auto";
@@ -41791,11 +41790,16 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
             top.style.fontWeight = "900";
             top.style.letterSpacing = "1px";
             top.style.textDecoration = "none";
-            top.style.padding = "6px 12px";
+            top.style.padding = "7px 14px";
             top.style.borderRadius = "12px";
             top.style.border = "1px solid rgba(255,255,255,0.18)";
             top.style.background = "rgba(0,0,0,0.18)";
-            top.style.textShadow = "0 0 10px rgba(255,255,255,0.25)";
+            top.style.textShadow = "0 0 10px rgba(255,255,255,0.20)";
+            top.style.position = "relative";
+            top.style.zIndex = "5";
+            top.style.filter = "none";
+            top.style.webkitBackdropFilter = "none";
+            top.style.backdropFilter = "none";
             top.setAttribute("aria-label", "More Unblocked Games by Static");
 
             // Force link to open even if the game UI tries to swallow the click
@@ -41806,23 +41810,44 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
                 window.open("https://sites.google.com/view/staticquasar931/gm3z", "_blank", "noopener");
             }, true);
 
-            const animId = "staticFunAnim";
+            const animId = "staticFunAnim2";
             if (!document.getElementById(animId)) {
                 const style = document.createElement("style");
                 style.id = animId;
                 style.textContent =
-                    "@keyframes staticHueShift{0%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(160deg)}100%{filter:hue-rotate(360deg)}}" +
                     "@keyframes staticGlowPulse{0%{box-shadow:0 0 0 rgba(255,255,255,0.0),0 0 10px rgba(0,255,255,0.12)}50%{box-shadow:0 0 14px rgba(255,255,255,0.18),0 0 22px rgba(255,0,255,0.18)}100%{box-shadow:0 0 0 rgba(255,255,255,0.0),0 0 10px rgba(0,255,255,0.12)}}" +
-                    ".staticFunLink{background:linear-gradient(90deg,#66f,#6ff,#6f6,#ff6,#f6f,#66f);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:staticHueShift 3.5s linear infinite;}" +
+                    "@keyframes staticSheen{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}" +
+                    "@keyframes staticFloat{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-1px) scale(1.01)}100%{transform:translateY(0) scale(1)}}" +
+                    "@keyframes staticWave{0%{transform:translateZ(0) rotateY(0deg)}50%{transform:translateZ(14px) rotateY(10deg)}100%{transform:translateZ(0) rotateY(0deg)}}" +
                     ".staticFunPill{animation:staticGlowPulse 1.8s ease-in-out infinite;}" +
-                    ".staticFunHover:hover{transform:translateY(-2px) scale(1.04);filter:brightness(1.15);}" +
-                    ".staticFunHover{transition:transform .14s ease, filter .14s ease;}";
+                    ".staticFunHover{transition:transform .16s ease, filter .16s ease, box-shadow .16s ease;}" +
+                    ".staticFunHover:hover{transform:translateY(-2px) scale(1.05);filter:brightness(1.18);box-shadow:0 0 18px rgba(255,255,255,0.20),0 0 30px rgba(0,255,255,0.18);}" +
+                    ".staticFunText{display:inline-block;white-space:nowrap;perspective:600px;animation:staticFloat 2.2s ease-in-out infinite;}" +
+                    ".staticFunChar{display:inline-block;will-change:transform,filter;transform-style:preserve-3d;animation:staticWave 1.6s ease-in-out infinite;}" +
+                    ".staticFunChar{background:linear-gradient(90deg,#66f,#6ff,#6f6,#ff6,#f6f,#66f);background-size:300% 100%;background-position:0% 50%;-webkit-background-clip:text;background-clip:text;color:transparent;animation-name:staticWave,staticSheen;animation-duration:1.6s,2.4s;animation-timing-function:ease-in-out,ease-in-out;animation-iteration-count:infinite,infinite;}";
                 document.head.appendChild(style);
             }
 
             top.classList.add("staticFunHover");
             top.classList.add("staticFunPill");
-            top.classList.add("staticFunLink");
+
+            // Build per-letter animated text (keeps anchor clickable because letters do not take pointer events)
+            const label = "More Unblocked Games by Static";
+            const textWrap = document.createElement("span");
+            textWrap.className = "staticFunText";
+            textWrap.style.pointerEvents = "none"; // key: click always lands on <a>
+
+            for (let i = 0; i < label.length; i++) {
+                const ch = document.createElement("span");
+                ch.className = "staticFunChar";
+                ch.textContent = label[i] === " " ? "\u00A0" : label[i];
+                ch.style.animationDelay = (i * 0.045).toFixed(3) + "s," + (i * 0.035).toFixed(3) + "s";
+                ch.style.pointerEvents = "none"; // key: click always lands on <a>
+                textWrap.appendChild(ch);
+            }
+
+            top.innerHTML = "";
+            top.appendChild(textWrap);
 
             const version = document.createElement("div");
             version.textContent = "PolyTrack v0.5.2";
